@@ -40,7 +40,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="projects" className="bg-[url('/projects-bg.svg')] min-h-screen">
+      <div id="projects" className="bg-[url('/images/projects-bg.svg')] min-h-screen">
         <div className="max-w-[112rem] mx-auto px-8 py-24">
           <h1>My recent <span className="blue">projects</span></h1>
 
