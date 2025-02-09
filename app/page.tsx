@@ -1,17 +1,15 @@
-import Link from "next/link";
+import ScrollLink from "@/components/ScrollLink";
 import Image from "next/image";
+import HomeSmiley from "@/public/images/HomeSmiley";
 
 export default function Home() {
   return (
     <div>
       <div className="max-w-[112rem] mx-auto px-8 flex flex-col h-screen">
         <header className="flex justify-between items-center">
-          <Link href="/">
-            <h4 className="py-12 font-bold">Andrew Jowe</h4>
-          </Link>
+          <h4 className="py-12 font-bold">Andrew Jowe</h4>
           <div className="py-12 flex gap-12 items-center">
-            <p>Home</p>
-            <p>Projects</p>
+            <ScrollLink href="#projects"><p>Projects</p></ScrollLink>
             <p>Skills</p>
             <p>Contact</p>
           </div>
@@ -28,23 +26,24 @@ export default function Home() {
                 <div className="flex">
                   <div className="flex flex-col items-center">
                     <div className="flex gap-6">
-                      <button className="blue"><p>See Portfolio</p></button>
+                      <ScrollLink href="#projects" className="button blue"><p>See Portfolio</p></ScrollLink>
                       <button><p>Resume</p></button>
                     </div>
-                    <Image src="/home-smiley.svg" width={200} height={150} alt=""/>
+                    <HomeSmiley />
                   </div>
                 </div>
               </div>
               <div className="flex-1">
-                <Image src="/home-decoration.svg" alt="" width={700} height={700} layout="responsive"/>
+                <Image src="/images/home-decoration.svg" alt="" width={700} height={700} layout="responsive"/>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-[url('/projects-bg.svg')] min-h-screen">
+      <div id="projects" className="bg-[url('/projects-bg.svg')] min-h-screen">
         <div className="max-w-[112rem] mx-auto px-8 py-24">
-          <h1>Here</h1>
+          <h1>My recent <span className="blue">projects</span></h1>
+
         </div>
       </div>
     </div>

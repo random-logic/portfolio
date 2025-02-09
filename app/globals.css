@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1.blue {
+h1.blue, h1 .blue {
   @apply text-blue;
 }
 
@@ -28,15 +28,15 @@ p {
   @apply font-poppins text-white text-[18px];
 }
 
-button.blue {
+button.blue, .button.blue {
   @apply bg-blue;
 }
 
-button {
-  @apply flex p-[10px_32px] items-start gap-[10px] rounded-[24px] backdrop-blur-sm bg-lightgray;
+button, .button {
+  @apply flex items-center p-[10px_32px] gap-[10px] rounded-[24px] backdrop-blur-sm bg-lightgray;
 }
 
-button p {
+button p, .button p {
   @apply font-bold leading-normal drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)];
 }
 
