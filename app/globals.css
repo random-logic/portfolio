@@ -9,19 +9,23 @@ h1.blue, h1 .blue {
 }
 
 h1 {
-  @apply font-poppins text-white lg:text-[64px] text-[48px];
+  @apply font-poppins text-white xl:text-[64px] lg:text-[56px] text-[48px];
 }
 
 h2 {
-  @apply font-poppins text-white lg:text-[48px] text-[36px];
+  @apply font-poppins text-white xl:text-[48px] lg:text-[42px] text-[36px];
 }
 
 h3 {
-  @apply font-poppins text-white lg:text-[36px] text-[24px];
+  @apply font-poppins text-white xl:text-[36px] lg:text-[30px] text-[24px];
+}
+
+h3.blue {
+  @apply text-blue
 }
 
 h4 {
-  @apply font-poppins text-white lg:text-[24px] text-[18px];
+  @apply font-poppins text-white xl:text-[24px] text-[18px];
 }
 
 p {
@@ -37,7 +41,7 @@ button, .button {
 }
 
 button p, .button p {
-  @apply font-bold leading-normal drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)];
+  @apply font-bold leading-normal drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)] text-center;
 }
 
 /* For Webkit browsers (Chrome, Safari, Edge), For Firefox */
@@ -52,4 +56,12 @@ button p, .button p {
 
 ::-webkit-scrollbar-track, scrollbar-track {
   background-color: transparent;
+}
+
+a {
+  @apply flex items-center;
+}
+
+input.text, textarea {
+  @apply rounded-2xl px-6 py-4 bg-lightgray text-white;
 }
