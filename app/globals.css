@@ -39,3 +39,17 @@ button {
 button p {
   @apply font-bold leading-normal drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)];
 }
+
+/* For Webkit browsers (Chrome, Safari, Edge), For Firefox */
+::-webkit-scrollbar, scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb, scrollbar-thumb {
+  border-radius: 10px;
+  @apply bg-lightgray;
+}
+
+::-webkit-scrollbar-track, scrollbar-track {
+  background-color: transparent;
+}
