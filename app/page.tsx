@@ -8,6 +8,7 @@ import Home from "@/public/icons/Home";
 import Envelope from "@/public/icons/Envelope";
 import LinkedIn from "@/public/icons/LinkedIn";
 import GitHub from "@/public/icons/GitHub";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -77,14 +78,18 @@ export default function Page() {
           <div className="w-[24px] h-[24px] text-white"><Envelope/></div>
           <ScrollLink href="#contact"><p>Contact</p></ScrollLink>
         </div>
-        <div className="flex justify-center items-center gap-[10px] p-[10px]">
-          <div className="w-[21px] h-[21px] text-white"><LinkedIn/></div>
-          <p>LinkedIn</p>
-        </div>
-        <div className="flex justify-center items-center gap-[10px] p-[10px]">
-          <div className="w-[22px] h-[22px] text-white"><GitHub/></div>
-          <p>GitHub</p>
-        </div>
+        <Link href="https://www.linkedin.com/in/andrewjowe/">
+          <div className="flex justify-center items-center gap-[10px] p-[10px]">
+            <div className="w-[21px] h-[21px] text-white"><LinkedIn/></div>
+            <p>LinkedIn</p>
+          </div>
+        </Link>
+        <Link href="https://github.com/random-logic">
+          <div className="flex justify-center items-center gap-[10px] p-[10px]">
+            <div className="w-[22px] h-[22px] text-white"><GitHub/></div>
+            <p>GitHub</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
