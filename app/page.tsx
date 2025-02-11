@@ -4,11 +4,15 @@ import HomeSmiley from "@/public/images/HomeSmiley";
 import Projects from "@/components/Projects";
 import ArrowTopRightBox from "@/public/icons/ArrowTopRightBox";
 import Contact from "@/components/Contact";
+import Home from "@/public/icons/Home";
+import Envelope from "@/public/icons/Envelope";
+import LinkedIn from "@/public/icons/LinkedIn";
+import GitHub from "@/public/icons/GitHub";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <div className="max-w-[112rem] mx-auto px-8 flex flex-col min-h-screen">
+      <div id="home" className="max-w-[112rem] mx-auto px-8 flex flex-col min-h-screen">
         <header className="flex justify-between items-center">
           <h4 className="py-12 font-bold">Andrew Jowe</h4>
           <div className="py-12 flex gap-12 items-center">
@@ -62,6 +66,24 @@ export default function Home() {
           <div className="flex-1 flex-grow">
             <Contact />
           </div>
+        </div>
+      </div>
+      <div className="flex justify-center items-center mt-[150px] mb-[100px] gap-[48px] px-8 flex-wrap">
+        <div className="flex justify-center items-center gap-[10px] p-[10px]">
+          <div className="w-[24px] h-[24px] text-white"><Home/></div>
+          <ScrollLink href="#home"><p>Home</p></ScrollLink>
+        </div>
+        <div className="flex justify-center items-center gap-[10px] p-[10px]">
+          <div className="w-[24px] h-[24px] text-white"><Envelope/></div>
+          <ScrollLink href="#contact"><p>Contact</p></ScrollLink>
+        </div>
+        <div className="flex justify-center items-center gap-[10px] p-[10px]">
+          <div className="w-[21px] h-[21px] text-white"><LinkedIn/></div>
+          <p>LinkedIn</p>
+        </div>
+        <div className="flex justify-center items-center gap-[10px] p-[10px]">
+          <div className="w-[22px] h-[22px] text-white"><GitHub/></div>
+          <p>GitHub</p>
         </div>
       </div>
     </div>
