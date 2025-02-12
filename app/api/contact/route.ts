@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `Andrew's Personal Portfolio Website <${GMAIL_USER}>`,
       to: GMAIL_USER,
-      subject: `${name} Sent a Message`,
+      subject: `$[Portfolio Website] {name} Sent a Message`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
