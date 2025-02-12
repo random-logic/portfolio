@@ -24,7 +24,7 @@ export default function Contact() {
     <textarea required className="w-full flex-grow h-full mb-6 md:min-h-0 min-h-[200px]" placeholder="Message" onChange={(e) => setMessage(e.target.value)}/>
     <div className="flex justify-between">
       <div>
-        <button className="blue">
+        <button className="button blue">
           <p>Send Message</p>
           <Plane/>
         </button>

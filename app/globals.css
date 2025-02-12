@@ -32,16 +32,20 @@ p {
   @apply font-poppins text-white text-[18px];
 }
 
-button.blue, .button.blue {
+.button.blue {
   @apply bg-blue;
 }
 
-button, .button {
+.button {
   @apply flex items-center p-[10px_32px] gap-[10px] rounded-[24px] backdrop-blur-sm bg-lightgray;
 }
 
-button p, .button p {
-  @apply font-bold leading-normal drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)] text-center;
+.text-shadow {
+  @apply drop-shadow-[0px_4px_4px_rgba(0,0,0,0.50)];
+}
+
+.button p {
+  @apply font-bold leading-normal text-shadow text-center;
 }
 
 /* For Webkit browsers (Chrome, Safari, Edge), For Firefox */

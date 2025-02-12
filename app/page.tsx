@@ -35,7 +35,7 @@ export default function Page() {
                 <div className="flex flex-col items-center">
                   <div className="flex gap-6">
                     <ScrollLink href="#projects" className="button blue"><p>See Portfolio</p></ScrollLink>
-                    <button><p>Resume</p></button>
+                    <Link href="/AndrewJowe_Resume_CS.pdf" className="button"><p>Resume</p></Link>
                   </div>
                   <HomeSmiley/>
                 </div>
