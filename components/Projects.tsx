@@ -2,7 +2,7 @@
 
 import {Fragment, useState} from "react";
 import useScreenWidth, {MD, XL} from "@/components/useScreenWidth";
-import {mapKElements, range, zip} from "@/components/utility";
+import {mapKElements, zip} from "@/components/utility";
 
 const PROJECT_TYPES = ["Frontend", "Backend", "AI", "ML"];
 const NO_PROJECTS_SELECTED = Array(PROJECT_TYPES.length).fill(false);
