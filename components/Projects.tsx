@@ -1,7 +1,7 @@
 "use client";
 
 import {Fragment, useState} from "react";
-import useBreakpoint from "@/components/useBreakpoint";
+import useScreenWidth, {MD, XL} from "@/components/useScreenWidth";
 import {mapKElements, range, zip} from "@/components/utility";
 
 const PROJECT_TYPES = ["Frontend", "Backend", "AI", "ML"];
@@ -35,15 +35,22 @@ const PROJECTS = [
 ];
 
 export default function Projects() {
-  const breakpoint = useBreakpoint();
+  const screenWidth = useScreenWidth();
 
   const [selectedSkills, setSelectedSkills] = useState(NO_PROJECTS_SELECTED);
   const allSelected = selectedSkills.every(selected => !selected);
 
   const [selectedProjectIdx, setSelectedProjectIdx] = useState(-1);
+  const selectedProject = PROJECTS[selectedProjectIdx];
 
   const allStyle = allSelected ? "blue" : "";
   const skillsStyle = selectedSkills.map(project => project ? "blue" : "");
+
+  const nCols = (() => {
+    if (screenWidth ?? 0 >= XL) return 3;
+    if (screenWidth ?? 0 >= MD) return 2;
+    return 1;
+  })();
 
   function setAll() {
     setSelectedSkills(NO_PROJECTS_SELECTED);
@@ -64,18 +71,11 @@ export default function Projects() {
     }
   }
 
-  function getNCols() {
-    if (breakpoint == "xl") return 3;
-    if (breakpoint == "md") return 2;
-    return 1;
-  }
-
   function getProjectDescriptionColSpanStyle() {
-    const cols = getNCols();
-    if (cols == 3) {
+    if (nCols == 3) {
       return "col-span-3";
     }
-    if (cols == 2) {
+    if (nCols == 2) {
       return "col-span-2";
     }
   }
@@ -96,7 +96,7 @@ export default function Projects() {
     <div className="pt-12" />
     <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-12 mx-auto">
       {
-        mapKElements(PROJECTS, getNCols(), (row, idx) => (
+        mapKElements(PROJECTS, nCols, (row, idx) => (
           <Fragment key={idx[0]}>
             {
               [...zip(row, idx)].map(([project, idx]) => (
@@ -109,7 +109,9 @@ export default function Projects() {
             {
               idx.includes(selectedProjectIdx) && (
                 <div className={`bg-lightgray p-4 rounded-[24px] ${getProjectDescriptionColSpanStyle()}`}>
-                  <p>Here {selectedProjectIdx} {idx}</p>
+                  <p>Skills: {selectedProject.skills.join(', ')}</p>
+                  <p>Tools: {selectedProject.tools.join(', ')}</p>
+
                 </div>
               )
             }
