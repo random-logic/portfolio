@@ -9,6 +9,7 @@ import Envelope from "@/public/icons/Envelope";
 import LinkedIn from "@/public/icons/LinkedIn";
 import GitHub from "@/public/icons/GitHub";
 import Link from "next/link";
+import Skills from "@/components/Skills";
 
 export default function Page() {
   return (
@@ -48,7 +49,17 @@ export default function Page() {
         </div>
       </div>
       <div id="projects" className="bg-[url('/images/projects-bg.svg')] min-h-screen">
-        <Projects />
+        <Projects/>
+      </div>
+      <div id="skills" className="px-8 flex flex-col justify-center items-center min-h-screen">
+        <div className="flex md:flex-row flex-col gap-24 max-w-[96rem] mx-auto py-24">
+          <div className="flex-1">
+            <Skills/>
+          </div>
+          <div className="flex-1">
+            <h1>Decoration Placeholder</h1>
+          </div>
+        </div>
       </div>
       <div id="contact" className="flex flex-col justify-center max-w-[96rem] mx-auto px-8 min-h-screen">
         <div className="flex justify-end">
@@ -59,13 +70,13 @@ export default function Page() {
             <h1 className="font-bold">Contact Me:</h1>
             <a href="mailto:joweandrew@gmail.com">
               <h3 className="font-bold blue">joweandrew@gmail.com</h3>
-              <div className="w-[36px] h-[36px] pl-2 text-blue"><ArrowTopRightBox /></div>
+              <div className="w-[36px] h-[36px] pl-2 text-blue"><ArrowTopRightBox/></div>
             </a>
-            <div className="pt-16" />
+            <div className="pt-16"/>
             <Image src="/images/goal-reached.svg" alt="" width={500} height={500} layout="responsive"/>
           </div>
           <div className="flex-1 flex-grow">
-            <Contact />
+            <Contact/>
           </div>
         </div>
       </div>
